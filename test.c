@@ -10,16 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_putchar(char c);
 
 void	ft_print_alphabet(void)
 {
-	char x;
+	char c;
 
-	x = 'a';
+	c = 'a';
 	while (x >= 'a' && x <= 'z')
 	{
-		ft_putchar(x);
-		x++;
+		ft_putchar(c);
+		c++;
 	}
 }
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
